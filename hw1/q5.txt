@@ -1,0 +1,35 @@
+- Load the constant 23 into register 4
+  R4 = 23
+
+- Copy the contents of register 2 into register 3
+  R3 = R2
+
+- Load char (one byte) starting at memory address 244 into register 6
+  R6 = Mem[244]
+
+- Load the word that begins 8 bytes after the address in R1. 
+  This is known as "constant offset" mode and is about the fanciest addressing mode a RISC processor will support.
+  R2 = Mem[R1 + 8]
+
+- Store the constant number 37 into the word beginning at 400
+  R1 = 37
+  Mem[400] = R1
+
+- Store the value in R6 into the word whose address is in R1
+  Mem[R1] = R6
+
+- Add 6 to R3 and store the result in R1
+  R1 = R3 + 6
+
+- Subtract R3 from R2 and store the result in R1
+  R1 = R3 - R2
+
+- Begin executing at address 344 if R1 equals 0
+  BEQ R1, 0, Mem[344]
+
+- Begin executing at address 12 before current instruction
+  Jmp 12
+
+- Take bits in R4, convert from float to int, and store back in same. 
+  Note that converting in this direction loses information, the fractional component is truncated and lost
+  R4 = FtoI R4
